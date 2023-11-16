@@ -1,0 +1,7 @@
+@mixin placeholder {
+    font-size: 2.4rem;
+    position: absolute;
+    top: 13%;
+    left: 0;
+    transition: 0.3s transform ease-out;
+}

@@ -1,0 +1,130 @@
+.form {
+    position: relative;
+    margin: 0 auto;
+    max-width: 46rem;
+    max-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem;
+    background-color: $white;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    color: $light-gray;
+
+    &__title {
+        text-align: left;
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+        font-weight: 700;
+        color: $accent;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        height: 10rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        background: none;
+        min-height: 6rem;
+        border: none;
+        margin-bottom: 5rem;
+        height: 3rem;
+        border-bottom: 1px solid $dark-gray;
+        outline: none;
+        color: #212121;
+        font-size: 2.4rem;
+        cursor: pointer;
+    }
+
+    &__placeholder-email {
+        @include placeholder;
+    }
+
+    &__placeholder-password {
+        @include placeholder;
+        margin-bottom: 6rem;
+    }
+
+    &__input:focus ~ &__placeholder-email,
+    &__input:not(:placeholder-shown) ~ &__placeholder-email {
+        transform: translateY(-3rem) translateX(-0.9rem) scale(0.75);
+    }
+
+    &__input:focus ~ &__placeholder-password,
+    &__input:not(:placeholder-shown) ~ &__placeholder-password {
+        transform: translateY(-3rem) translateX(-1.45rem) scale(0.75);
+    }
+
+    &__btn {
+        width: 70%;
+        position: relative;
+        display: inline-block;
+        background: transparent;
+        padding: 2rem 0;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 0.2rem solid #e3e3e3;
+        min-width: 24rem;
+        transition: 0.3s ease;
+        outline: none;
+        cursor: pointer;
+        span {
+            position: relative;
+            color: #dddddd;
+            z-index: 1;
+            transition: 0.3s ease;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $accent;
+            transform: translateY(-0.3rem);
+            span {
+                color: $accent;
+            }
+        }
+        &:active,
+        &:focus {
+            transform: translateY(0.3rem);
+        }
+    }
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .form {
+        margin: 0 1rem;
+        text-align: center;
+        padding: 3rem;
+        &__icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            height: 6rem;
+        }
+
+        &__btn {
+            min-width: 14rem;
+        }
+
+        &__title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: $accent;
+        }
+    }
+}
