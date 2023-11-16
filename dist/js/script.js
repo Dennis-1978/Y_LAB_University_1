@@ -30,9 +30,9 @@ async function userAuthentication(email, password) {
 form.addEventListener('submit', event => {
     event.preventDefault();
 
-    userAuthentication(email, password)
-    .then(data => {
-        if (data.token) {ht
+    userAuthentication(email, password).then(data => {
+        if (data.token) {
+            ht;
             localStorage.setItem('token', data.token);
             console.log(data.token);
             alert('Welcome');
